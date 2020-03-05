@@ -11,7 +11,11 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+  deployment:
+	  steps:
+      - $DOCKER_HUB_TRIGGER
 workflows:
     build-and-test:
       jobs:
         - build-and-test
+        - deployment
