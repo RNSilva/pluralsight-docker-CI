@@ -15,9 +15,7 @@ jobs:
     executor:
       name: node/default
     steps:
-      - run:
-          name: Trigger Docker build
-          command: 'curl -H "Content-Type:application/json" --data '{"build": true}' -X POST ${DOCKER_HUB_TRIGGER}'
+      - run: curl -H "Content-Type:application/json" --data '{"build": true}' -X POST ${DOCKER_HUB_TRIGGER}
 workflows:
     build-and-test:
       jobs:
