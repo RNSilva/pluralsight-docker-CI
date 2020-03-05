@@ -12,6 +12,8 @@ jobs:
             - run: npm install
             - run: npm test
   deployment:
+    executor:
+      name: node/default
     steps:
       - $DOCKER_HUB_TRIGGER
 workflows:
