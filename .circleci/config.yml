@@ -15,7 +15,7 @@ jobs:
     executor:
       name: node/default
     steps:
-      - run: curl -H "Content-Type:application/json" --data '{"build": true}' -X POST ${DOCKER_HUB_TRIGGER}
+      - run: curl --data build_parameters[build]=true ${DOCKER_HUB_TRIGGER}
 workflows:
     build-and-test:
       jobs:
